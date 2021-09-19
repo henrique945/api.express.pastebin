@@ -12,4 +12,8 @@ e compartilhar com seus amigos.`
 	res.render('home', { code })
 })
 
+app.get('/new', (req, res) => {
+	res.render('new')
+})
+
 app.listen(3000)
