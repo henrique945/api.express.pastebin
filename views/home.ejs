@@ -11,13 +11,14 @@
     <title>Home</title>
 </head>
 <body>
+<%- include('_buttons.ejs')%>
 <div class="wrapper">
     <div class="line-numbers">
         <% for (let i = 1; i <= code.split('\n').length; i++ ) { %>
             <div><%= i %></div>
         <% } %>
     </div>
-    <pre><code id="code-content" class="language-plaintext"><%= code %></code></pre>
+    <pre><code id="code-content" class="<%= locals.lang ? `language-${locals.lang}` : ''%>"><%= code %></code></pre>
 </div>
 </body>
 </html>

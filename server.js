@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 Use o menu a sua direita para criar novos arquivos 
 e compartilhar com seus amigos.`
 
-	res.render('home', { code })
+	res.render('home', { code, lang: 'plaintext' })
 })
 
 app.get('/new', (req, res) => {
