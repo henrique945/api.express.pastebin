@@ -1,9 +1,12 @@
 <div class="buttons-wrapper">
     <a href="/" class="logo">Pastebin</a>
     <div class="buttons">
-        <a href="/new" class="btn">New</a>
+        <a href="/new" class="btn">Novo</a>
         <% if(locals.canSave) { %>
-            <button class="btn" type="submit">Save</button>
+            <button class="btn" type="submit">Salvar</button>
+        <% }%>
+        <% if(locals.id != null) { %>
+            <a href="/<%= locals.id %>/duplicate" class="btn">Copiar</a>
         <% }%>
     </div>
 </div>

@@ -31,13 +31,26 @@ app.post('/save', async (req, res) => {
 	}
 })
 
+app.get('/:id/duplicate', async (req, res) => {
+	const id = req.params.id;
+
+	try {
+		const document = await Document.findById(id);
+		console.log(document);
+
+		res.render('new', { value: document.value })
+	} catch (e) {
+		res.redirect(`/${id}`)
+	}
+})
+
 app.get('/:id', async (req, res) => {
 	const id = req.params.id;
 
 	try {
 		const document = await Document.findById(id);
 
-		res.render('home', { code: document.value })
+		res.render('home', { code: document.value, id })
 	} catch (e) {
 		res.redirect('/')
 	}
