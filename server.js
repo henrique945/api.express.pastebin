@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 app.set('view engine', 'ejs')
-app.set()
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 	const code = `Bem vindo ao Pastebin!
