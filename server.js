@@ -36,7 +36,6 @@ app.get('/:id/duplicate', async (req, res) => {
 
 	try {
 		const document = await Document.findById(id);
-		console.log(document);
 
 		res.render('new', { value: document.value })
 	} catch (e) {
@@ -57,3 +56,7 @@ app.get('/:id', async (req, res) => {
 })
 
 app.listen(3000)
+
+// TODO: show all code blocks on a new page
+// TODO: serve this project online
+// TODO: render images if a special tag
